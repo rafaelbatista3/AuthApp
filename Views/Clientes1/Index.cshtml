@@ -1,0 +1,104 @@
+﻿@model IEnumerable<AuthApp.Models.Clientes>
+
+
+<div class="container-fluid position-relative">
+    <form asp-action="Index" method="get" class="d-flex col-5 position-absolute top-100 start-50 translate-middle mt-4">
+      <input class="form-control me-2" type="search" name="searchString" placeholder="Pesquisar por nome..." aria-label="Procurar">
+        <button class="btn btn-success" type="submit"><i class="bi bi-search"></i></button>
+    </form>
+    </div>
+<p>
+    <a asp-action="Create" class="btn btn-primary"><spam><i class="bi bi-person-fill-add"></i></spam> Novo Cliente</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <!--
+            <th>
+                @Html.DisplayNameFor(model => model.CNPJ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereço)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Complemento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bairro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CEP)
+            </th>
+            -->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <!--
+            <td>
+                @Html.DisplayFor(modelItem => item.CNPJ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereço)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Complemento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bairro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CEP)
+            </td>
+                -->
+            <td>
+                    <div class="btn-group btn-group-sm" role="group" aria-label="">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-success border-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Editar"><i class="bi bi-pen-fill"></i></a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-warning  border-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Detalhes"><i class="bi bi-list"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger border-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Deletar"><i class="bi bi-trash-fill"></i></a>
+                    </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+

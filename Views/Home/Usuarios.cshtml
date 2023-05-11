@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/3557ca3af7.js" crossorigin="anonymous"></script>
+    <title>Clientes</title>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - GF Construções</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AuthApp.styles.css" asp-append-version="true" />
+
+</head>
+<body>
+    <h1>Gerenciamento de usuários</h1>
+    <form class="row">
+        <div class="col-md-6 d-flex">
+            <input class="form-control me-2" type="search" placeholder="Nome" aria-label="Search">
+            <div class="col-auto">
+                <button class="btn btn-outline-success me-5" type="submit">Procurar</button>
+            </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Cadastrar Usuário
+                </button>
+            </div>
+        </div>
+    </form>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cadastro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="col-md-12">
+                            <label for="inputText" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="inputText">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputText" class="form-label">Usuário</label>
+                            <input type="text" class="form-control" id="inputText">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputText" class="form-label">Confirmar usuário</label>
+                            <input type="text" class="form-control" id="inputText">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPassword" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                        <div class="col-6">
+                            <label for="inputPassword" class="form-label">Confirmar senha</label>
+                            <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

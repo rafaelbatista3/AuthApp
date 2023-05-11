@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20230413210058_M01 - Cópia.cs" />
+    <Compile Remove="Migrations\20230413210058_M01 - Cópia.Designer.cs" />
+    <Compile Remove="Migrations\20230413210058_M01.cs" />
+    <Compile Remove="Migrations\20230413210058_M01.Designer.cs" />
+    <Compile Remove="Migrations\20230413210610_M00.cs" />
+    <Compile Remove="Migrations\20230413210610_M00.Designer.cs" />
+    <Compile Remove="Views\Access\styles.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Home\Clientes.cshtml" />
+    <Content Remove="Views\Home\Servicos.cshtml" />
+    <Content Remove="Views\Home\Usuarios.cshtml" />
+    <Content Remove="wwwroot\css\StyleSheet.css" />
+    <Content Remove="wwwroot\css\StyleSheet1.css" />
+    <Content Remove="wwwroot\css\StyleSheet2.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Access\StyleSheet.css" />
+    <None Remove="Views\Home\htmlpage.html" />
+    <None Remove="Views\Home\Servicos.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+    <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.7" />
+    <PackageReference Include="xunit.extensibility.core" Version="2.4.2" />
+    <PackageReference Include="xunit.extensibility.execution" Version="2.4.2" />
+  </ItemGroup>
+
+</Project>

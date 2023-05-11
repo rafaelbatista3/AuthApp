@@ -1,0 +1,80 @@
+﻿@model AuthApp.Models.Clientes
+
+@{
+    ViewData["Title"] = "Detalhes do cliente";
+}
+
+<div class="container w-50 shadow rounded">
+    <dl class="row justify-content-center">
+        <dt class = "col-sm-3 text-end">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-3 text-end">
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+        <dt class="col-sm-3 text-end">
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt class="col-sm-3 text-end">
+            @Html.DisplayNameFor(model => model.CNPJ)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.CNPJ)
+        </dd>
+        <dt class="col-sm-3 text-end">
+            @Html.DisplayNameFor(model => model.Endereço)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Endereço)
+        </dd>
+        <dt class="col-sm-3 text-end">
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt class="col-sm-3 text-end">
+            @Html.DisplayNameFor(model => model.Complemento)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Complemento)
+        </dd>
+        <dt class="col-sm-3 text-end">
+            @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Bairro)
+        </dd>
+        <dt class="col-sm-3 text-end">
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt class="col-sm-3 text-end">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class="col-sm-3 text-end">
+            @Html.DisplayNameFor(model => model.CEP)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.CEP)
+        </dd>
+    </dl>
+</div>
+<div class="d-grid gap-2 col-2 mx-auto">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar cliente</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</div>

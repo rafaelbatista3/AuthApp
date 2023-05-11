@@ -1,0 +1,67 @@
+﻿@model AuthApp.Models.VMLogin;
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/3557ca3af7.js" crossorigin="anonymous"></script>
+    <title>Login</title>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - GF Construções</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AuthApp.styles.css" asp-append-version="true" />
+    
+</head>
+<body>
+    
+        <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-5" style="background-color: #0473b3;">
+              <div class="container-fluid justify-content-center">
+                <a class="navbar-brand fs-3 fw-bold text-white" asp-area="" asp-controller="Access" asp-action="Login">GF<spam class="text-black" style="font-size:13px">CONSTRUÇÕES</spam></a>
+              </div>
+            </nav>
+        </header>
+
+    <div class="d-flex justify-content-center">
+    <form asp-controller="Access" asp-action="Login" method="post" class="needs-validation" novalidate>
+        <div class="form-floating mb-3 mt-5">
+            <input type= "email" class="form-control" id="floatingInput" placeholder="Usuário" asp-for="Email" required/>
+            <label for="floatingInput">Usuário</label>
+        </div>
+
+        <div class="form-floating mb-3 ">
+             <input type="password" class="form-control" id="floatingPassword" placeholder="Senha" asp-for="Password" required/>
+             <label for="floatingPassword">Senha</label>
+        </div>
+        
+        <label class="mx-auto">
+            <input type="checkbox" asp-for="KeepLoggedIn"/>
+            Manter logado
+        </label>
+        
+        <p>
+            <button type="submit" class="submit btn btn-secondary d-grid gap-2 col-6 mx-auto my-3">Entrar</button>
+        </p>
+    
+
+        @if (ViewData["ValidateMessage"] !=null)
+        {
+            <br />
+            <br />
+            <label>@ViewData["ValidateMessage"]</label>
+        }
+
+    </form>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

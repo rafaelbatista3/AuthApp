@@ -1,0 +1,208 @@
+﻿@model IEnumerable<AuthApp.Models.Clientes>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/3557ca3af7.js" crossorigin="anonymous"></script>
+    <title>Clientes</title>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - GF Construções</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AuthApp.styles.css" asp-append-version="true" />
+
+</head>
+<body>
+    <h1>Clientes</h1>
+
+    <!-- Button trigger modal -->
+    <form class="row">
+        <div class="col-md-6 d-flex">
+            <input class="form-control me-2" type="search" placeholder="Nome, CNPJ, telefone, endereço..." aria-label="Search">
+            <div class="col-auto">
+                <button class="btn btn-outline-success me-5" type="submit">Procurar</button>
+            </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Cadastrar Cliente
+                </button>
+            </div>
+        </div>
+    </form>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cadastro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="inputText" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="inputText">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputText" class="form-label">Telefone</label>
+                            <input type="text" class="form-control" id="inputText">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">email</label>
+                            <input type="email" class="form-control" id="inputEmail4">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputNumber" class="form-label">CNPJ</label>
+                            <input type="text" class="form-control" id="inputNumber">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label">Endereço</label>
+                            <input type="text" class="form-control" id="inputAddress">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputNumber" class="form-label">N°</label>
+                            <input type="text" class="form-control" id="inputNumber">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputComplemento" class="form-label">Complemento</label>
+                            <input type="text" class="form-control" id="inputComplemento">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputBairro" class="form-label">Bairro</label>
+                            <input type="text" class="form-control" id="inputBairro">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputCity" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputState" class="form-label">Estado</label>
+                            <select id="inputState" class="form-select">
+                                <option selected>Escolha...</option>
+                                <option>Acre</option>
+                                <option>Amazonas</option>
+                                <option>Amapá</option>
+                                <option>Bahia</option>
+                                <option>Ceará</option>
+                                <option>Distrito Federal</option>
+                                <option>Espírito Santo</option>
+                                <option>Goiás</option>
+                                <option>Maranhão</option>
+                                <option>Mato Grosso</option>
+                                <option>Mato Grosso do Sul</option>
+                                <option>Minas Gerais</option>
+                                <option>Pará</option>
+                                <option>Paraíba</option>
+                                <option>Paraná</option>
+                                <option>Pernambuco</option>
+                                <option>Paiuí</option>
+                                <option>Rio de Janeiro</option>
+                                <option>Rio Grande do Norte</option>
+                                <option>Rio Grande do Sul</option>
+                                <option>Rondônia</option>
+                                <option>Rorâima</option>
+                                <option>Santa Catarina</option>
+                                <option>São Paulo</option>
+                                <option>Sergipe</option>
+                                <option>Tocantins</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputZip" class="form-label">CEP</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CNPJ)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Endereço)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Numero)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Complemento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bairro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cidade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CEP)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CNPJ)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Endereço)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Numero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Complemento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Bairro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cidade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CEP)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

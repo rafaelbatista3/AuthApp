@@ -1,0 +1,37 @@
+﻿@model AuthApp.Models.Servicos
+
+@{
+    ViewData["Title"] = "Deletar serviço";
+}
+
+
+<h4>Você está certo disso?</h4>
+<div class="container w-75 shadow rounded">
+    
+    <dl class="row justify-content-md-center">
+        <dt class = "col-sm-3 text-end">
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+        <dt class = "col-sm-3 text-end">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+        <dt class = "col-sm-3 text-end">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+    </dl>
+</div>
+<form asp-action="Delete" class="d-grid gap-2 col-1 mx-auto">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Deletar" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Esta operação não pode ser desfeita." /> 
+        <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+    </form>
+
