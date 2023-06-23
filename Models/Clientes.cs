@@ -10,7 +10,7 @@ namespace AuthApp.Models
 { 
     [Table ("Clientes")]
 
-    public class Clientes : LinksHATEOS
+    public class Clientes
     {
         [Key]
         public int Id { get; set;  }

@@ -22,5 +22,7 @@ namespace AuthApp.Models
         [Required(ErrorMessage = "Este campo é obrigatório.")]
         public string Descricao { get; set; }
 
+       
+
     }
 }

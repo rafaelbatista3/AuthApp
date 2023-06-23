@@ -11,5 +11,6 @@ namespace AuthApp.Models
         public DbSet<Clientes> Clientes { get; set; }
         public DbSet<Servicos> Servicos { get; set; }   
 
+        public DbSet<Orcamento> Orçamentos { get; set;}
     }
 }

@@ -52,15 +52,18 @@ namespace AuthApp.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Numero")
                         .HasColumnType("int");
 
                     b.Property<string>("Telefone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -68,7 +71,7 @@ namespace AuthApp.Migrations
                     b.ToTable("Clientes");
                 });
 
-            modelBuilder.Entity("AuthApp.Models.LinkDto", b =>
+            modelBuilder.Entity("AuthApp.Models.Orcamento", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -76,23 +79,17 @@ namespace AuthApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("ClientesId")
+                    b.Property<int>("ClientesId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Href")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Metodo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Rel")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ServicosId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ClientesId");
 
-                    b.ToTable("LinkDto");
+                    b.ToTable("Orçamentos");
                 });
 
             modelBuilder.Entity("AuthApp.Models.Servicos", b =>
@@ -104,9 +101,14 @@ namespace AuthApp.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Descricao")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("OrcamentoId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Tipo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Valor")
@@ -114,19 +116,32 @@ namespace AuthApp.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("OrcamentoId");
+
                     b.ToTable("Servicos");
                 });
 
-            modelBuilder.Entity("AuthApp.Models.LinkDto", b =>
+            modelBuilder.Entity("AuthApp.Models.Orcamento", b =>
                 {
-                    b.HasOne("AuthApp.Models.Clientes", null)
-                        .WithMany("Links")
-                        .HasForeignKey("ClientesId");
+                    b.HasOne("AuthApp.Models.Clientes", "Clientes")
+                        .WithMany()
+                        .HasForeignKey("ClientesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Clientes");
                 });
 
-            modelBuilder.Entity("AuthApp.Models.Clientes", b =>
+            modelBuilder.Entity("AuthApp.Models.Servicos", b =>
                 {
-                    b.Navigation("Links");
+                    b.HasOne("AuthApp.Models.Orcamento", null)
+                        .WithMany("Serviços")
+                        .HasForeignKey("OrcamentoId");
+                });
+
+            modelBuilder.Entity("AuthApp.Models.Orcamento", b =>
+                {
+                    b.Navigation("Serviços");
                 });
 #pragma warning restore 612, 618
         }

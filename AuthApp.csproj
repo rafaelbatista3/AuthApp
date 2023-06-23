@@ -13,6 +13,9 @@
     <Compile Remove="Migrations\20230413210058_M01.Designer.cs" />
     <Compile Remove="Migrations\20230413210610_M00.cs" />
     <Compile Remove="Migrations\20230413210610_M00.Designer.cs" />
+    <Compile Remove="Models\Cart.cs" />
+    <Compile Remove="Models\Class.cs" />
+    <Compile Remove="Models\TotalOrcamento.cs" />
     <Compile Remove="Views\Access\styles.cs" />
   </ItemGroup>
 
@@ -33,12 +36,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.18" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.14" />
     <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
